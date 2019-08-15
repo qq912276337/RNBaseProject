@@ -6,7 +6,7 @@
  * @flow
  */
 
-import React, {Fragment} from 'react';
+import React, {Fragment,Component} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -23,8 +23,10 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import codePush from "react-native-code-push";
+const codePushOptions = { checkFrequency: codePush.CheckFrequency.MANUAL };
 
-const App = () => {
+const AppContent = () => {
   return (
     <Fragment>
       <StatusBar barStyle="dark-content" />
@@ -40,7 +42,7 @@ const App = () => {
           )}
           <View style={styles.body}>
             <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
+              <Text style={styles.sectionTitle}>Step One smlsmlsmlsml</Text>
               <Text style={styles.sectionDescription}>
                 Edit <Text style={styles.highlight}>App.js</Text> to change this
                 screen and then come back to see your edits.
@@ -71,6 +73,27 @@ const App = () => {
     </Fragment>
   );
 };
+
+class App extends Component{
+
+  componentDidMount(){
+    codePush.sync({
+      updateDialog: true,
+      installMode: codePush.InstallMode.IMMEDIATE,
+      mandatoryInstallMode:codePush.InstallMode.IMMEDIATE,
+      //deploymentKey为刚才生成的,用Platform判断下平台
+      deploymentKey: Platform.OS === 'ios'?'SMhcDTHCzi_IOxaRWXPiwnAoo3HQ0369420b-ed68-4e1c-be21-fa68275aa268':'4OkNe6elSSY_w1GDjw89qAO3EOJ30369420b-ed68-4e1c-be21-fa68275aa268',
+    });
+  }
+
+  render(){
+    return (
+      <View>
+        <AppContent />
+      </View>
+    );
+  }
+}
 
 const styles = StyleSheet.create({
   scrollView: {
@@ -110,5 +133,6 @@ const styles = StyleSheet.create({
     textAlign: 'right',
   },
 });
+App = codePush(codePushOptions)(App)
 
 export default App;

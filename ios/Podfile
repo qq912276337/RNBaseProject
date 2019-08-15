@@ -28,20 +28,22 @@ target 'RNBaseProject' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  target 'RNBaseProjectTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
+  pod 'CodePush', :path => '../node_modules/react-native-code-push'
+
+#  target 'RNBaseProjectTests' do
+#    inherit! :search_paths
+#    # Pods for testing
+#  end
 
   use_native_modules!
 end
 
-target 'RNBaseProject-tvOS' do
-  # Pods for RNBaseProject-tvOS
-
-  target 'RNBaseProject-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-end
+#target 'RNBaseProject-tvOS' do
+#  # Pods for RNBaseProject-tvOS
+#
+#  target 'RNBaseProject-tvOSTests' do
+#    inherit! :search_paths
+#    # Pods for testing
+#  end
+#
+#end
