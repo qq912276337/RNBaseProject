@@ -84,6 +84,7 @@ PODS:
   - yoga (0.60.4.React)
 
 DEPENDENCIES:
+  - boost-for-react-native (from `https://gitee.com/damon-s/boost-for-react-native.git`)
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
@@ -107,11 +108,9 @@ DEPENDENCIES:
   - React-RCTWebSocket (from `../node_modules/react-native/Libraries/WebSocket`)
   - yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
-SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - boost-for-react-native
-
 EXTERNAL SOURCES:
+  boost-for-react-native:
+    :git: https://gitee.com/damon-s/boost-for-react-native.git
   DoubleConversion:
     :podspec: "../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec"
   Folly:
@@ -157,6 +156,11 @@ EXTERNAL SOURCES:
   yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
+CHECKOUT OPTIONS:
+  boost-for-react-native:
+    :commit: 6bbccdd8146ffb75e1ae5e92472f7affb3375c1c
+    :git: https://gitee.com/damon-s/boost-for-react-native.git
+
 SPEC CHECKSUMS:
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   DoubleConversion: 5805e889d232975c086db112ece9ed034df7a0b2
@@ -182,6 +186,6 @@ SPEC CHECKSUMS:
   React-RCTWebSocket: 163873f4cdd5f1058a9483443404fc3801581cb6
   yoga: c2c050f6ae6e222534760cc82f559b89214b67e2
 
-PODFILE CHECKSUM: 084ccad30748e4e7411db6aff26517ac2e6108c8
+PODFILE CHECKSUM: c758fe9a72091f8d241c2c56cd98d628dd97cdc9
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.8.3

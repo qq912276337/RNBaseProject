@@ -28,6 +28,7 @@ target 'RNBaseProject' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
+  pod 'boost-for-react-native', :git => 'https://gitee.com/damon-s/boost-for-react-native.git’
   target 'RNBaseProjectTests' do
     inherit! :search_paths
     # Pods for testing
